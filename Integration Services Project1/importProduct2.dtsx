@@ -1,0 +1,1876 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/23/2021 6:12:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ZOOROPIA"
+  DTS:CreatorName="ZOOROPIA\David"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{ECC67625-DBA7-471E-9ADA-C65C27442107}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="importProduct2"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{4B4ECB6F-B8DD-4F93-9D3D-A597EBB18B3E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ECD3DA7E-6C4E-459D-AC49-B90DE6AA9214}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=pcloud.database.windows.net;User ID=rialto2;Initial Catalog=CDS;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAD3NPLagMM0Cq4+Miv3xLYgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACaYhDMgwbyZ1sTOWZW6xshJYhl4rXPf4FUCyahCQIQ+AAAAAAOgAAAAAIAACAAAAAksuP59Al9wduPXf04NW/Vn6v1Slh8Pi9W80/GgpBEQjAAAABMDp08l1gqmgXjbIcOevofxU24GEiPVKhJEMvAr36/6iklIeG3Gaklz/kC15hQCoZAAAAA1kw0FJlmxfELVtFH7lcX5WourO86Ms9r3hbotXtxODrbAfFXyQz7o4u3rZiOLYQn4pgCasbAQ/qM9UHC7YF0Ng</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BFF6725D-3EDF-45E2-A4D3-DAD9678B57CC}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=pcloud.database.windows.net;User ID=rialto2;Initial Catalog=CDS;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAD3NPLagMM0Cq4+Miv3xLYgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADHFQx8oQbTCGc3d5MbW3sFDNzJ/B3r4XS5AcaSqO5Y0AAAAAAOgAAAAAIAACAAAAA+FsAHUG+wVzY1nfP9F+nYL7UbfTPi8YuWz1TckUdYEzAAAABDWITAW0seaDBK79JDSPFqdcTREZ+PWI5PNL1sV89709V0+mS9p0u1TsomYXULyzhAAAAAIu6vb8JJGPWFDpEvx+GgSbyQaLiT35PfwiXZtjTdfxo1HojzZR1sIIxnVe+ka+J7vnyudk5W2xG3RTEupygiOA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{CCBD6988-9831-4F92-98ED-95B77E6C628C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[ProductID]"
+                      cachedDataType="numeric"
+                      cachedName="ProductID"
+                      cachedPrecision="18"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[OEM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OEM"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEM]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[OEMModelLine]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OEMModelLine"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEMModelLine]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[OEMModelNameNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="OEMModelNameNumber"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEMModelNameNumber]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[PFCFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PFCFlag"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[PFCFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[CDSSupported]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CDSSupported"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[CDSSupported]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[ConfigurationNeeded]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ConfigurationNeeded"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ConfigurationNeeded]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[SelectionNeeded]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SelectionNeeded"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SelectionNeeded]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Maxiumum]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Maxiumum"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Maxiumum]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Medium]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Medium"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Medium]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Minimum]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Minimum"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Minimum]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[High]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="High"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[High]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Med]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Med"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Med]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Low]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Low"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Low]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[AssumedSpec]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AssumedSpec"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[AssumedSpec]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Notes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="Notes"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Notes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[ListPrice]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ListPrice"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ListPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ProductID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[OEM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[OEM]"
+                      name="OEM"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEM]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[OEMModelLine]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[OEMModelLine]"
+                      name="OEMModelLine"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEMModelLine]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[OEMModelNameNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[OEMModelNameNumber]"
+                      name="OEMModelNameNumber"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEMModelNameNumber]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PFCFlag]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PFCFlag]"
+                      name="PFCFlag"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[PFCFlag]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CDSSupported]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CDSSupported]"
+                      name="CDSSupported"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[CDSSupported]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[ConfigurationNeeded]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[ConfigurationNeeded]"
+                      name="ConfigurationNeeded"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ConfigurationNeeded]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[SelectionNeeded]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[SelectionNeeded]"
+                      name="SelectionNeeded"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SelectionNeeded]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Maxiumum]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Maxiumum]"
+                      name="Maxiumum"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Maxiumum]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Medium]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Medium]"
+                      name="Medium"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Medium]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Minimum]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Minimum]"
+                      name="Minimum"
+                      precision="9"
+                      scale="2"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Minimum]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[High]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[High]"
+                      name="High"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[High]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Med]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Med]"
+                      name="Med"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Med]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Low]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Low]"
+                      name="Low"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Low]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[AssumedSpec]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[AssumedSpec]"
+                      name="AssumedSpec"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[AssumedSpec]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Notes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Notes]"
+                      name="Notes"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Notes]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[ListPrice]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[ListPrice]"
+                      name="ListPrice"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ListPrice]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - Product_2"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - Product_2"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Product_2]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - Product_2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[OEM]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OEM"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[OEM]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[OEM]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[OEMModelLine]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OEMModelLine"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[ModelLine]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[OEMModelLine]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[OEMModelNameNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OEMModelNameNumber"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[ProductNameNumber]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[OEMModelNameNumber]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[PFCFlag]"
+                      cachedDataType="bool"
+                      cachedName="PFCFlag"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[PLCFlag]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[PFCFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[CDSSupported]"
+                      cachedDataType="bool"
+                      cachedName="CDSSupported"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[CDSSupported]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[CDSSupported]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[ConfigurationNeeded]"
+                      cachedDataType="bool"
+                      cachedName="ConfigurationNeeded"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[ConfigurationNeeded]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[ConfigurationNeeded]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[PricingSource]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PricingSource"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[PricingSource]"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[PricingSource]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[SoftwareFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SoftwareFlag"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[SoftwareFlag]"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SoftwareFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[SelectionNeeded]"
+                      cachedDataType="bool"
+                      cachedName="SelectionNeeded"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[SelectionNeeded]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[SelectionNeeded]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[Maxiumum]"
+                      cachedDataType="numeric"
+                      cachedName="Maxiumum"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Maximum]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Maxiumum]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[Medium]"
+                      cachedDataType="numeric"
+                      cachedName="Medium"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Medium]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Medium]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[Minimum]"
+                      cachedDataType="numeric"
+                      cachedName="Minimum"
+                      cachedPrecision="9"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Minimum]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Minimum]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[High]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="High"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[High]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[High]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[Med]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Med"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Med]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Med]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[Low]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Low"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Low]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Low]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[AssumedSpec]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AssumedSpec"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[AssumedSpec]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[AssumedSpec]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[Notes]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Notes"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Notes]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Notes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].Columns[ListPrice]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ListPrice"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[ListPrice]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[ListPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[OEM]"
+                      dataType="wstr"
+                      length="255"
+                      name="OEM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[ModelLine]"
+                      dataType="wstr"
+                      length="255"
+                      name="ModelLine" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[ProductNameNumber]"
+                      dataType="wstr"
+                      length="255"
+                      name="ProductNameNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[PLCFlag]"
+                      dataType="bool"
+                      name="PLCFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[CDSSupported]"
+                      dataType="bool"
+                      name="CDSSupported" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[ConfigurationNeeded]"
+                      dataType="bool"
+                      name="ConfigurationNeeded" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[PricingSource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PricingSource" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[SoftwareFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SoftwareFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[SelectionNeeded]"
+                      dataType="bool"
+                      name="SelectionNeeded" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Maximum]"
+                      dataType="numeric"
+                      name="Maximum"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Medium]"
+                      dataType="numeric"
+                      name="Medium"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Minimum]"
+                      dataType="numeric"
+                      name="Minimum"
+                      precision="9"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[ListPrice]"
+                      dataType="wstr"
+                      length="255"
+                      name="ListPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[High]"
+                      dataType="wstr"
+                      length="255"
+                      name="High" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Med]"
+                      dataType="wstr"
+                      length="255"
+                      name="Med" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Low]"
+                      dataType="wstr"
+                      length="255"
+                      name="Low" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[AssumedSpec]"
+                      dataType="wstr"
+                      length="255"
+                      name="AssumedSpec" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input].ExternalColumns[Notes]"
+                      dataType="wstr"
+                      length="255"
+                      name="Notes" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - Product_2.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Product_2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Product_2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Product_2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - Product_DR"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source - Product_DR"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Product_DR]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - Product_DR.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      precision="18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[OEM]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEM]"
+                      name="OEM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEMModelLine]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[OEMModelLine]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEMModelLine]"
+                      name="OEMModelLine"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEMModelNameNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[OEMModelNameNumber]"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[OEMModelNameNumber]"
+                      name="OEMModelNameNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[PFCFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[PFCFlag]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[PFCFlag]"
+                      name="PFCFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[AlternateOEMName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[AlternateOEMName]"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[AlternateOEMName]"
+                      name="AlternateOEMName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[CDSSupported]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[CDSSupported]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[CDSSupported]"
+                      name="CDSSupported"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ConfigurationNeeded]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[ConfigurationNeeded]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ConfigurationNeeded]"
+                      name="ConfigurationNeeded"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[PricingSource]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[PricingSource]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[PricingSource]"
+                      name="PricingSource"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SoftwareFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[SoftwareFlag]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SoftwareFlag]"
+                      name="SoftwareFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SelectionNeeded]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[SelectionNeeded]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SelectionNeeded]"
+                      name="SelectionNeeded"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Maxiumum]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Maxiumum]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Maxiumum]"
+                      name="Maxiumum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Medium]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Medium]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Medium]"
+                      name="Medium"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Minimum]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Minimum]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Minimum]"
+                      name="Minimum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SoftwareMMC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[SoftwareMMC]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SoftwareMMC]"
+                      name="SoftwareMMC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[High]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[High]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[High]"
+                      name="High"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Med]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Med]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Med]"
+                      name="Med"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Low]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Low]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Low]"
+                      name="Low"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[AssumedSpec]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[AssumedSpec]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[AssumedSpec]"
+                      name="AssumedSpec"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      length="150"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Notes]"
+                      name="Notes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[MMCAchieved]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[MMCAchieved]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[MMCAchieved]"
+                      name="MMCAchieved"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[FloorDNMM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[FloorDNMM]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[FloorDNMM]"
+                      name="FloorDNMM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[FlagforCost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[FlagforCost]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[FlagforCost]"
+                      name="FlagforCost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Margin]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Margin]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[Margin]"
+                      name="Margin"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[FamilyMargin]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[FamilyMargin]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[FamilyMargin]"
+                      name="FamilyMargin"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[AdjtoMKT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[AdjtoMKT]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[AdjtoMKT]"
+                      name="AdjtoMKT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ListPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[ListPrice]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[ListPrice]"
+                      name="ListPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SalesDiscount]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[SalesDiscount]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[SalesDiscount]"
+                      name="SalesDiscount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[VPSalesDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[VPSalesDAM]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[VPSalesDAM]"
+                      name="VPSalesDAM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[HlinkaKuehnDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[HlinkaKuehnDAM]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[HlinkaKuehnDAM]"
+                      name="HlinkaKuehnDAM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[McKeeNewtonKuehDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[McKeeNewtonKuehDAM]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[McKeeNewtonKuehDAM]"
+                      name="McKeeNewtonKuehDAM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[CriticalLowDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[CriticalLowDAM]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].Columns[CriticalLowDAM]"
+                      name="CriticalLowDAM"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      dataType="numeric"
+                      name="ProductID"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[OEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OEM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[OEMModelLine]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OEMModelLine" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[OEMModelNameNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="OEMModelNameNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[PFCFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PFCFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[AlternateOEMName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="AlternateOEMName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[CDSSupported]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CDSSupported" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[ConfigurationNeeded]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ConfigurationNeeded" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[PricingSource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PricingSource" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[SoftwareFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SoftwareFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[SelectionNeeded]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SelectionNeeded" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Maxiumum]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Maxiumum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Medium]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Medium" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Minimum]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Minimum" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[SoftwareMMC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SoftwareMMC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[High]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="High" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Med]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Med" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Low]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Low" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[AssumedSpec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AssumedSpec" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[MMCAchieved]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MMCAchieved" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[FloorDNMM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FloorDNMM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[FlagforCost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FlagforCost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[Margin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Margin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[FamilyMargin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FamilyMargin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[AdjtoMKT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AdjtoMKT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[ListPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ListPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[SalesDiscount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SalesDiscount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[VPSalesDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VPSalesDAM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[HlinkaKuehnDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HlinkaKuehnDAM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[McKeeNewtonKuehDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="McKeeNewtonKuehDAM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output].ExternalColumns[CriticalLowDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CriticalLowDAM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      name="ProductID"
+                      precision="18" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[OEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[OEM]"
+                      name="OEM" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[OEMModelLine]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[OEMModelLine]"
+                      name="OEMModelLine" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[OEMModelNameNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[OEMModelNameNumber]"
+                      name="OEMModelNameNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[PFCFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[PFCFlag]"
+                      name="PFCFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[AlternateOEMName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[AlternateOEMName]"
+                      name="AlternateOEMName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[CDSSupported]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[CDSSupported]"
+                      name="CDSSupported" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[ConfigurationNeeded]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[ConfigurationNeeded]"
+                      name="ConfigurationNeeded" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[PricingSource]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[PricingSource]"
+                      name="PricingSource" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[SoftwareFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[SoftwareFlag]"
+                      name="SoftwareFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[SelectionNeeded]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[SelectionNeeded]"
+                      name="SelectionNeeded" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Maxiumum]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Maxiumum]"
+                      name="Maxiumum" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Medium]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Medium]"
+                      name="Medium" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Minimum]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Minimum]"
+                      name="Minimum" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[SoftwareMMC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[SoftwareMMC]"
+                      name="SoftwareMMC" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[High]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[High]"
+                      name="High" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Med]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Med]"
+                      name="Med" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Low]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Low]"
+                      name="Low" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[AssumedSpec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[AssumedSpec]"
+                      name="AssumedSpec" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      name="Notes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[MMCAchieved]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[MMCAchieved]"
+                      name="MMCAchieved" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[FloorDNMM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[FloorDNMM]"
+                      name="FloorDNMM" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[FlagforCost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[FlagforCost]"
+                      name="FlagforCost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Margin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[Margin]"
+                      name="Margin" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[FamilyMargin]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[FamilyMargin]"
+                      name="FamilyMargin" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[AdjtoMKT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[AdjtoMKT]"
+                      name="AdjtoMKT" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[ListPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[ListPrice]"
+                      name="ListPrice" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[SalesDiscount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[SalesDiscount]"
+                      name="SalesDiscount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[VPSalesDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[VPSalesDAM]"
+                      name="VPSalesDAM" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[HlinkaKuehnDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[HlinkaKuehnDAM]"
+                      name="HlinkaKuehnDAM" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[McKeeNewtonKuehDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[McKeeNewtonKuehDAM]"
+                      name="McKeeNewtonKuehDAM" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[CriticalLowDAM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[CriticalLowDAM]"
+                      name="CriticalLowDAM" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - Product_2.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task 1\Source - Product_DR.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow Task 1"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Data Flow Task 1\Destination - Product_2"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Data Flow Task 1\Source - Product_DR"
+          TopLeft="11,5.5" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow Task 1\Data Conversion 0 - 0"
+          TopLeft="9.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+          TopLeft="102.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+          TopLeft="102.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

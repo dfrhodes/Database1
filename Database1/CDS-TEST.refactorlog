@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="8283faae-3619-477a-b3ed-bad90aa9786d" ChangeDateTime="04/02/2021 23:23:54">
+    <Property Name="ElementName" Value="[dbo].[QuoteItem].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[QuoteItem]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="QuoteDetailID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b4644f73-5563-496c-89a1-b0727312e226" ChangeDateTime="04/02/2021 23:25:08">
+    <Property Name="ElementName" Value="[dbo].[QuoteDetail].[QuoteDetailID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[QuoteDetail]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="QuoteDetaiIID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="41b316b2-df1b-4fab-9166-4d363c42e0a4" ChangeDateTime="04/02/2021 23:54:00">
+    <Property Name="ElementName" Value="[dbo].[QuoteDetail].[LocationStateProvinceParish]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[QuoteDetail]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LocationStateProvince" />
+  </Operation>
+</Operations>

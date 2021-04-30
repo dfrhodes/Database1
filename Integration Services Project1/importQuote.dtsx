@@ -1,0 +1,2375 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/2/2021 11:29:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ZOOROPIA"
+  DTS:CreatorName="ZOOROPIA\David"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{127A1815-6447-4872-82BD-FB489E8A0925}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="importQuote"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{E1461515-DD17-4D79-973C-E55E0FFA6C79}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{67B01506-15C2-454C-B886-61AB544B9AF1}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(localdb)\ProjectsV13;Initial Catalog=Database1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{96292473-FEAA-4A6A-AA4A-7849B711A4E7}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\tmp\cds-dump20210114\output-20210114220610.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quote Number"
+              DTS:DTSID="{F97CBAA1-13A8-4127-9DDE-DB838CD630DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Timestamp"
+              DTS:DTSID="{BDAC643B-0C42-462B-94C2-6D8651F80BD4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quote Submit to SQL"
+              DTS:DTSID="{30C877BB-9A37-4EE2-B749-DF903F2385C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quote Number Base"
+              DTS:DTSID="{F720E2F2-8B0B-4306-8472-3689B382912E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Entry Date"
+              DTS:DTSID="{7AAD8B5C-16CB-4DFA-AFBA-BBF81B9BE676}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Decision Date"
+              DTS:DTSID="{406BF1B4-6484-4D61-97D5-E0BDD064EAED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales Type"
+              DTS:DTSID="{BCD92701-4042-44B7-A05A-E93D224DCA9D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer Reference"
+              DTS:DTSID="{6F26B796-6F85-4181-8D65-FC4AB361EEB2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Partner"
+              DTS:DTSID="{F0FAE7BC-5AB5-4E02-B678-599FEB694AFB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Partner Division"
+              DTS:DTSID="{A22354EE-0298-4C4A-A832-C3A1CA874809}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Account_End User"
+              DTS:DTSID="{E788A99C-8C6B-4AD5-B9B2-A983BF12253E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Opportunity Name"
+              DTS:DTSID="{FC965127-E016-4ECE-A0C6-3CD524C25EB3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Competition Concern 1"
+              DTS:DTSID="{CAA17E3A-D45E-4A68-AAE3-AF53EC41E685}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Competition Concern 2"
+              DTS:DTSID="{CA2CD26A-0BED-4905-994A-991B9641E772}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Competition Concern 3"
+              DTS:DTSID="{E7868395-92EE-4CCB-8D47-5A16C19CA9EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Competition Concern Reason 1"
+              DTS:DTSID="{94B5BEAB-060D-4F34-8634-0EAADE771D7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Competition Concern Reason 2"
+              DTS:DTSID="{71D6A1A9-7E78-4DBD-BEF8-690C561022BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Competition Concern Reason 3"
+              DTS:DTSID="{D1BF959C-BE1F-494B-84EE-82FF342AFBDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region Selected"
+              DTS:DTSID="{7ED000A3-F621-4DD3-8BA8-666016BC003C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 42"
+              DTS:DTSID="{075727AA-5871-497B-997B-23DEEA97770A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 41"
+              DTS:DTSID="{483CD314-4E32-41CC-BE87-2CF1B46B5D93}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 40"
+              DTS:DTSID="{31C86937-5BC1-4CEF-ABCA-60B6AF5A0BF1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 39"
+              DTS:DTSID="{7B8A8238-FAF6-4D35-9F7C-244E3B5DB5A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 38"
+              DTS:DTSID="{C728DA94-3FE0-4209-8222-7354FA835262}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 37"
+              DTS:DTSID="{A824CCD0-A59B-4356-BACA-7395959CDA4E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 36"
+              DTS:DTSID="{21113DB6-9D4B-494C-9A5D-C6A393482187}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 35"
+              DTS:DTSID="{727291A0-1460-4F9F-AC6C-32BA7A18A28F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 34"
+              DTS:DTSID="{FE57FA76-7EE9-4A50-9809-F83829B040BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 33"
+              DTS:DTSID="{C2214F88-DF64-4309-8D96-F39376114519}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 32"
+              DTS:DTSID="{1D28C762-BBC2-40EB-B229-222B21D56A16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 31"
+              DTS:DTSID="{B3559960-E14D-48AA-8C54-581120E508F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 30"
+              DTS:DTSID="{A64AD967-D07F-486C-858D-29ABB9359580}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 29"
+              DTS:DTSID="{53E55807-89DC-40E5-BAFD-4B55C88563ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 28"
+              DTS:DTSID="{A95816EE-D935-4578-8BE2-9CE817E92D7D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 27"
+              DTS:DTSID="{53B31390-05C0-4D2F-B60D-B5158FA47A1C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 26"
+              DTS:DTSID="{AF4710CB-9342-43FA-B5F8-5AC4D7123866}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 25"
+              DTS:DTSID="{FEF84D7B-AA96-435C-85F3-FF700AC9036D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 24"
+              DTS:DTSID="{DA9F679F-E7BA-4EE7-B4F0-C15315593FFC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 23"
+              DTS:DTSID="{784C4262-1A9F-4583-BA09-7A9FD37D94A9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 22"
+              DTS:DTSID="{281DA60B-B358-44EF-AD75-A9975D6AF950}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 21"
+              DTS:DTSID="{6031FA90-D333-4928-8A6E-47C7F2C3F8BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 20"
+              DTS:DTSID="{D3BCDA22-E509-465B-A18E-16A9925F9366}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 19"
+              DTS:DTSID="{B23F23BD-9056-4022-A254-3EE33DB9DFB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 18"
+              DTS:DTSID="{FA55FD30-3CA7-4699-A9F2-1315F972F426}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 17"
+              DTS:DTSID="{BADD4C1E-FD83-40B9-8A34-FF5D804FE3F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 16"
+              DTS:DTSID="{BF587CD6-1721-4728-BA41-4C23E3E50136}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 15"
+              DTS:DTSID="{B4F6D0A5-32AD-4A67-9DF1-995EE659C0D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 14"
+              DTS:DTSID="{06DF2196-A186-43EC-89D3-8E3BDC7142CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 13"
+              DTS:DTSID="{B6A42744-BD01-41B5-8591-53A5937C3FF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 12"
+              DTS:DTSID="{F967EC81-124D-405D-94F0-BD767C55B9C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 11"
+              DTS:DTSID="{EB8FCF1B-190A-480F-B903-EAFC54C9CE35}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 10"
+              DTS:DTSID="{172CBC4D-99E4-41A8-850B-202173DD3F74}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 9"
+              DTS:DTSID="{8DFF41D0-12CF-42B8-8629-D87A15C51D92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 8"
+              DTS:DTSID="{18898421-E535-4169-8F5D-888E901FA49A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 7"
+              DTS:DTSID="{6ABF20F5-35B1-4546-9BFF-4D0B197ED1F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 6"
+              DTS:DTSID="{F34E0BA5-7C9F-4BB3-87E0-C4BF5006803C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 5"
+              DTS:DTSID="{E46789C3-CD9C-46CA-A345-726083DD3B45}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 4"
+              DTS:DTSID="{8CF07B63-ECB0-4ADF-ADCF-1743682108C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 3"
+              DTS:DTSID="{45D339E2-2370-41DE-9211-6DEDD7B1C9EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 2"
+              DTS:DTSID="{51BEA7E7-B68E-4990-AD07-0B47A6EA0B8A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{5B37C1EA-A617-4445-952F-5363664DBE6B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{D739C912-6A70-460C-BB7F-CA7271F3BC3A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ExchRate"
+              DTS:DTSID="{54E42F3B-FEE2-4EB1-B68D-7A29E7B4D72E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrSel"
+              DTS:DTSID="{7226ED1F-B2E5-4A10-ADCB-82C6032C6E25}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total Bid Goal Seek Amount"
+              DTS:DTSID="{73E83759-AAB9-4E09-99A7-A3DB0E875CE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Support_SLA Percent"
+              DTS:DTSID="{A93A58C0-2FE1-4557-8264-DD263D6F021F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{2DB618B9-6199-4AC8-A6B0-7E802592C246}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Data Conversion 0 - 0"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 0 - 0"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Customer Reference]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Customer Reference"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Customer Reference]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Partner]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Partner"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Partner]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Partner Division]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Partner Division"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Partner Division]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Account_End User]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Account_End User"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Account_End User]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Opportunity Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Opportunity Name"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Opportunity Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Competition Concern 1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Competition Concern 1"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Competition Concern 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Competition Concern 2"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Competition Concern 3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Competition Concern 3"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 3]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Competition Concern Reason 1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Competition Concern Reason 1"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Competition Concern Reason 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Competition Concern Reason 2"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input].Columns[Competition Concern Reason 3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Competition Concern Reason 3"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 3]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Customer Reference]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Customer Reference]"
+                      name="Customer Reference"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Customer Reference]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Partner]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Partner]"
+                      name="Partner"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Partner]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Partner Division]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Partner Division]"
+                      name="Partner Division"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Partner Division]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Account_End User]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Account_End User]"
+                      name="Account_End User"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Account_End User]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Opportunity Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Opportunity Name]"
+                      name="Opportunity Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Opportunity Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern 1]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern 1]"
+                      name="Competition Concern 1"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern 2]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern 2]"
+                      name="Competition Concern 2"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern 3]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern 3]"
+                      name="Competition Concern 3"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 3]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern Reason 1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern Reason 1]"
+                      name="Competition Concern Reason 1"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern Reason 2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern Reason 2]"
+                      name="Competition Concern Reason 2"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern Reason 3]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern Reason 3]"
+                      name="Competition Concern Reason 3"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 3]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Destination - Quote"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - Quote"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Quote]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - Quote.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Quote Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Quote Number"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[QuoteID]"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Quote Number]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Sales Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sales Type"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[SalesType]"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Sales Type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Customer Reference]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Customer Reference"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CustomerReference]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Customer Reference]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Partner]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Partner"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[PartnerName]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Partner]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Partner Division]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Partner Division"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[PartnerDivision]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Partner Division]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Account_End User]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Account_End User"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[AccountContact]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Account_End User]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Opportunity Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Opportunity Name"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[OpportunityName]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Opportunity Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Competition Concern 1]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Competition Concern 1"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionConcern1]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern 1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Competition Concern 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Competition Concern 2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionConcern2]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern 2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Competition Concern 3]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Competition Concern 3"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionConcern3]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern 3]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Competition Concern Reason 1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Competition Concern Reason 1"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionReason1]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern Reason 1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Competition Concern Reason 2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Competition Concern Reason 2"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionReason2]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern Reason 2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Competition Concern Reason 3]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Competition Concern Reason 3"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionReason3]"
+                      lineageId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output].Columns[Competition Concern Reason 3]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Region Selected]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Region Selected"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Region Selected]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[CurrSel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CurrSel"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[Currency]"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[CurrSel]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].Columns[Total Bid Goal Seek Amount]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total Bid Goal Seek Amount"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[TotalBidGoalSeekAmount]"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Total Bid Goal Seek Amount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[QuoteID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="QuoteID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp2"
+                      name="ModifiedDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CreationDate]"
+                      dataType="dbTimeStamp2"
+                      name="CreationDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[ApprovalDate]"
+                      dataType="dbTimeStamp2"
+                      name="ApprovalDate"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[WorkflowStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="WorkflowStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CRMQuoteNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CRMQuoteNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[SalesType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SalesType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CustomerReference]"
+                      dataType="nText"
+                      name="CustomerReference" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[PartnerName]"
+                      dataType="nText"
+                      name="PartnerName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[PartnerDivision]"
+                      dataType="nText"
+                      name="PartnerDivision" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[AccountContact]"
+                      dataType="nText"
+                      name="AccountContact" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[OpportunityName]"
+                      dataType="nText"
+                      name="OpportunityName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionConcern1]"
+                      codePage="1252"
+                      dataType="text"
+                      name="CompetitionConcern1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionConcern2]"
+                      codePage="1252"
+                      dataType="text"
+                      name="CompetitionConcern2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionConcern3]"
+                      codePage="1252"
+                      dataType="text"
+                      name="CompetitionConcern3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionReason1]"
+                      dataType="nText"
+                      name="CompetitionReason1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionReason2]"
+                      dataType="nText"
+                      name="CompetitionReason2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[CompetitionReason3]"
+                      dataType="nText"
+                      name="CompetitionReason3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[Currency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Currency" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[ExchangeRate]"
+                      dataType="numeric"
+                      name="ExchangeRate"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[ExchangeRateDate]"
+                      dataType="numeric"
+                      name="ExchangeRateDate"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[TotalBidGoalSeekAmount]"
+                      dataType="cy"
+                      name="TotalBidGoalSeekAmount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input].ExternalColumns[SupportSLADiscount]"
+                      dataType="numeric"
+                      name="SupportSLADiscount"
+                      precision="5"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - Quote.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Quote.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - Quote.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - Quote.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - output-20210114220610_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - output-20210114220610_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Quote Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Quote Number]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Quote Number]"
+                      name="Quote Number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Timestamp]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Timestamp]"
+                      name="Timestamp"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Quote Submit to SQL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Quote Submit to SQL]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Quote Submit to SQL]"
+                      name="Quote Submit to SQL"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Quote Number Base]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Quote Number Base]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Quote Number Base]"
+                      name="Quote Number Base"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Entry Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Entry Date]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Entry Date]"
+                      name="Entry Date"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Decision Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Decision Date]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Decision Date]"
+                      name="Decision Date"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Sales Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Sales Type]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Sales Type]"
+                      name="Sales Type"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Customer Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Customer Reference]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Customer Reference]"
+                      name="Customer Reference"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Partner]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Partner]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Partner]"
+                      name="Partner"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Partner Division]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Partner Division]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Partner Division]"
+                      name="Partner Division"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Account_End User]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Account_End User]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Account_End User]"
+                      name="Account_End User"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Opportunity Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Opportunity Name]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Opportunity Name]"
+                      name="Opportunity Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern 1]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 1]"
+                      name="Competition Concern 1"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern 2]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 2]"
+                      name="Competition Concern 2"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern 3]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern 3]"
+                      name="Competition Concern 3"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern Reason 1]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 1]"
+                      name="Competition Concern Reason 1"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern Reason 2]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 2]"
+                      name="Competition Concern Reason 2"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern Reason 3]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Competition Concern Reason 3]"
+                      name="Competition Concern Reason 3"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Region Selected]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Region Selected]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Region Selected]"
+                      name="Region Selected"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[CurrSel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[CurrSel]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[CurrSel]"
+                      name="CurrSel"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Total Bid Goal Seek Amount]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Total Bid Goal Seek Amount]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Total Bid Goal Seek Amount]"
+                      name="Total Bid Goal Seek Amount"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Support_SLA Percent]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Support_SLA Percent]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].Columns[Support_SLA Percent]"
+                      name="Support_SLA Percent"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Quote Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Quote Number" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Quote Submit to SQL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Quote Submit to SQL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Quote Number Base]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Quote Number Base" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Entry Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Entry Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Decision Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Decision Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Sales Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sales Type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Customer Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Customer Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Partner]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Partner" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Partner Division]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Partner Division" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Account_End User]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Account_End User" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Opportunity Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Opportunity Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Competition Concern 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Competition Concern 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern 3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Competition Concern 3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern Reason 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Competition Concern Reason 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern Reason 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Competition Concern Reason 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Competition Concern Reason 3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Competition Concern Reason 3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Region Selected]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Region Selected" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[ExchRate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ExchRate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[CurrSel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CurrSel" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Total Bid Goal Seek Amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total Bid Goal Seek Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Support_SLA Percent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Support_SLA Percent" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 42]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 42" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 41]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 41" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 40]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 40" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 39]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 39" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 38]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 38" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 37]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 37" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 36]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 36" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 35]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 35" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 34]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 34" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 33]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 33" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 32]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 32" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 31]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 31" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 30]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 30" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 29]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 29" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 28]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 28" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 27]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 27" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 26]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 26" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 25]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 25" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 24]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 24" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 23]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 23" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 22]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 22" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 21]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 21" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 20]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 20" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 19]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 19" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 18]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 18" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 17]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 17" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 16]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 16" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 15]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 15" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 14]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 14" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 13]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 13" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 12]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 12" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 11]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 11" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 10]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 10" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 9" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 7]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 5]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 5" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Column 0" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task 1\Destination - Quote.Inputs[Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task 1\Data Conversion 0 - 0.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Data Conversion 0 - 0.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - output-20210114220610_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Data Flow Task 1"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Data Flow Task 1\Source - output-20210114220610_csv"
+          TopLeft="5.5,6.5" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Data Flow Task 1\Destination - Quote"
+          TopLeft="51.5,209.5" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow Task 1\Data Conversion 0 - 0"
+          TopLeft="45.5,107.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="138.5,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Data Conversion Output]"
+          TopLeft="138.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination - Quote">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
